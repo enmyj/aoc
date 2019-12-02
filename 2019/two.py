@@ -36,9 +36,16 @@ def calculate_two_a(input_file: str) -> int:
 
 
 def calculate_two_b(input_file: str) -> int:
+    """ return answer for question 2 part B
+    can probably find a better way than double O(n^2)
     """
-    """
-    pass
+    for i in range(0, 100):
+        for j in range(0, 100):
+            instructions = read_input(input_file)
+            instructions[1] = i
+            instructions[2] = j
+            if intcode(instructions)[0] == 19690720:
+                return 100 * i + j
 
 
 if __name__ == "__main__":
@@ -53,4 +60,4 @@ if __name__ == "__main__":
     # answers
     fp = '/Users/ian.myjer/repos/aoc/2019/two.input'
     print(calculate_two_a(fp))
-    # print(calculate_two_b(fp))
+    print(calculate_two_b(fp))
