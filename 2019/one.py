@@ -36,6 +36,6 @@ if __name__ == "__main__":
     assert m2f_recursive(1969) == 966
 
     # answers
-    fl = '/Users/ian.myjer/repos/aoc/2019/one.input'
+    fl = '/Users/ian.myjer/repos/aoc/2019/data/one.input'
     print(calculate_one_a(fl))
     print(calculate_one_b(fl))

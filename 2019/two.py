@@ -58,6 +58,6 @@ if __name__ == "__main__":
         [30, 1, 1, 4, 2, 5, 6, 0, 99]
 
     # answers
-    fp = '/Users/ian.myjer/repos/aoc/2019/two.input'
+    fp = '/Users/ian.myjer/repos/aoc/2019/data/two.input'
     print(calculate_two_a(fp))
     print(calculate_two_b(fp))
