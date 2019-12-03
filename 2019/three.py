@@ -35,7 +35,7 @@ def wire_to_path(wire: list) -> list:
     return path
 
 
-def q3a(raw_wires: str) -> int:
+def q3a(raw_wires: list) -> int:
     """ read AOC input for all "wires"
     find intersecting points
     return manhattan distance for the closest point to (0,0)
@@ -51,10 +51,19 @@ def q3a(raw_wires: str) -> int:
     return min(abs(x) + abs(y) for x, y in intersect)
 
 
-def q3b(input_file: str) -> int:
+def q3b(raw_wires: list) -> int:
+    """ read AOC input for all "wires"
+    find intersecting points
+    return sum of fewest steps to reach intersection
     """
-    """
-    pass
+    # get points along each wire
+    wires = [wire_to_path(wire) for wire in raw_wires]
+
+    # find intersecting points between first two wires
+    # (per input spec)
+    intersect = list(set(wires[0]) & set(wires[1]))
+
+    return min(wires[0].index(pt) + wires[1].index(pt) + 2 for pt in intersect)
 
 
 if __name__ == "__main__":
@@ -87,6 +96,11 @@ if __name__ == "__main__":
     testwire5 = ['R98', 'U47', 'R26', 'D63', 'R33', 'U87', 'L62', 'D20', 'R33', 'U53', 'R51']
     testwire6 = ['U98', 'R91', 'D20', 'R16', 'D67', 'R40', 'U7', 'R15', 'U6', 'R7']
     assert q3a([testwire5, testwire6]) == 135
+
+    # tests question 3B
+    assert q3b([testwire1, testwire2]) == 30
+    assert q3b([testwire3, testwire4]) == 610
+    assert q3b([testwire5, testwire6]) == 410
 
     # answers
     fp = '/Users/ian.myjer/repos/aoc/2019/data/three.input'
