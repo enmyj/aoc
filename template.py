@@ -2,7 +2,7 @@
 
 
 def read_input(input_file: str) -> list:
-    """ read input file into list format with integers
+    """ read input file
     """
     pass
 
@@ -20,8 +20,7 @@ def q_num_a(input_file: str) -> int:
 
 
 def q_num_b(input_file: str) -> int:
-    """ return answer for question 2 part B
-    can probably find a better way than double O(n^2)
+    """
     """
     pass
 
