@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
+from typing import List
 
-def read_input(input_file: str) -> list:
+Wires = List[List[str]]
+
+
+def read_input(input_file: str) -> Wires:
     """ read input file into list of lists of strings
     """
     with open(input_file, 'r') as f:
@@ -35,7 +39,7 @@ def wire_to_path(wire: list) -> list:
     return path
 
 
-def q3a(raw_wires: list) -> int:
+def q3a(raw_wires: Wires) -> int:
     """ read AOC input for all "wires"
     find intersecting points
     return manhattan distance for the closest point to (0,0)
@@ -51,7 +55,7 @@ def q3a(raw_wires: list) -> int:
     return min(abs(x) + abs(y) for x, y in intersect)
 
 
-def q3b(raw_wires: list) -> int:
+def q3b(raw_wires: Wires) -> int:
     """ read AOC input for all "wires"
     find intersecting points
     return sum of fewest steps to reach intersection

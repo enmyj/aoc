@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
+from typing import List
 
-def read_input(input_file: str) -> list:
+Codes = List[int]
+
+
+def read_input(input_file: str) -> Codes:
     """ read input file into list format with integers
     """
     with open(input_file, 'r') as f:
