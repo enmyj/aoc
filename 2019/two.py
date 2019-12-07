@@ -30,22 +30,22 @@ def intcode(ls: list) -> list:
             raise Exception('Invalid Optcode')
 
 
-def calculate_two_a(input_file: str) -> int:
+def calculate_two_a(inp: Codes) -> int:
     """ return answer for question 2 part A
     """
-    instructions = read_input(input_file)
+    instructions = read_input(inp)
     instructions[1] = 12
     instructions[2] = 2
     return intcode(instructions)[0]
 
 
-def calculate_two_b(input_file: str) -> int:
+def calculate_two_b(inp: Codes) -> int:
     """ return answer for question 2 part B
     can probably find a better way than double O(n^2)
     """
     for i in range(0, 100):
         for j in range(0, 100):
-            instructions = read_input(input_file)
+            instructions = read_input(inp)
             instructions[1] = i
             instructions[2] = j
             if intcode(instructions)[0] == 19690720:
