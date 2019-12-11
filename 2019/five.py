@@ -21,43 +21,66 @@ def intcode(ls: list, inp: int = 1) -> list:
     """
     pnt = 0
     while True:
+
+        print(pnt, ls)
+
+        ipnt = str(ls[pnt])
+        op_cd = ipnt.zfill(5)[-2:]
+        instr = ipnt.zfill(5)[0:-2][::-1]
         
-        # halt
-        if ls[pnt] == 99:
+        if op_cd == '99':
             return ls
-
-        # opcodes 3/4
-        elif ls[pnt] in (3, 4):
-            if ls[pnt] == 3:
-                ls[ls[pnt+1]] = inp
-            else:
-                print(ls[ls[pnt+1]])
+        elif op_cd == '01':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
+            ls[ls[pnt+3]] = param1+param2
+            pnt += 4
+        elif op_cd == '02':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
+            ls[ls[pnt+3]] = param1*param2
+            pnt += 4
+        elif op_cd == '03':
+            ls[ls[pnt+1]] = inp
             pnt += 2
-
-        # normal 1/2 opcodes?
-        if ls[pnt] == 1:
-            ls[ls[pnt+3]] = ls[ls[pnt+1]] + ls[ls[pnt+2]]
-            pnt += 4
-        elif ls[pnt] == 2:
-            ls[ls[pnt+3]] = ls[ls[pnt+1]] * ls[ls[pnt+2]]
-            pnt += 4
-
-        # longer opcodes
-        else:
-            instr_rev = str(ls[pnt])[0:-2].zfill(4)[::-1]
-            op_cd = str(ls[pnt])[-2]
-
-            print(ls[pnt:pnt+4], op_cd, instr_rev)
-
-            a = ls[ls[pnt+1]] if instr_rev[0] == '0' else ls[pnt+1]
-            b = ls[ls[pnt+2]] if instr_rev[1] == '0' else ls[pnt+2]
-            res = a + b if op_cd == '01' else a * b
-            if instr_rev[2] == '0':
-                ls[ls[pnt+3]] = res
+        elif op_cd == '04':
+            print(pnt, ls)
+            break
+            print(ls[ls[pnt+1]])
+            pnt += 2
+        elif op_cd == '05':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
+            if param1 != 0:
+                ls[pnt] = ls[param2]
             else:
-                ls[pnt+3] = res
+                pnt += 3
+        elif op_cd == '06':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
 
+            if param1 == 0:
+                ls[pnt] = ls[param2]
+            else:
+                pnt += 3
+
+        elif op_cd == '07':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
+            if param1 < param2:
+                ls[ls[pnt+3]] = 1
+            else:
+                ls[ls[pnt+3]] = 0
             pnt += 4
+        elif op_cd == '08':
+            param1 = ls[ls[pnt+1]] if instr[0] == '0' else ls[pnt+1]
+            param2 = ls[ls[pnt+2]] if instr[1] == '0' else ls[pnt+2]
+            if param1 == param2:
+                ls[ls[pnt+3]] = 1
+            else: 
+                ls[ls[pnt+3]] = 0
+            pnt += 4
+
 
 
 def q5a(instr: Codes) -> int:
@@ -77,7 +100,12 @@ if __name__ == "__main__":
     # tests from instructions
     assert intcode([1002,4,3,4,33]) == [1002,4,3,4,99]
 
+    print(intcode(
+        [3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9],
+        0
+    ))
+
     # answers
-    fp = '/home/imyjer/repos/aoc/2019/data/five.input'
-    print(q5a(read_input(fp)))
+    # fp = '/home/imyjer/repos/aoc/2019/data/five.input'
+    # print(q5a(read_input(fp)))
     # print(q6a(fp))
