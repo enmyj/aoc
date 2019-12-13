@@ -48,7 +48,9 @@ def intcode(
             ls[ls[pnt+1]] = inp
             pnt += 2
         elif op_cd == '04':
-            # confusing...
+            # stupid handling for diagnostic output
+            # if we need diagnostic, only return
+            # output op_code before HALT
             if ls[pnt+2] == 99:
                 return param1
             else:
@@ -73,7 +75,6 @@ def intcode(
         elif op_cd == '08':
             ls[ls[pnt+3]] == int(param1 == param2)
             pnt += 4
-
 
 
 def q5a(instr: Codes) -> int:
