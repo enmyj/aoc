@@ -29,6 +29,10 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
 }
 
+application {
+    mainClassName = "enmyj.aoc.DayOne"
+}
+
 
 test {
     useJUnitPlatform {
@@ -39,7 +43,3 @@ test {
     include '**/*Tests.class'
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'enmyj.aoc.App'
-}
