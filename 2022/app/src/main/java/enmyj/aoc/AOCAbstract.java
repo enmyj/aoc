@@ -32,4 +32,11 @@ abstract class AOCAbstract implements AOCInterface {
             e.printStackTrace();
         }
     }
+
+    public void problemOne(){
+        System.out.println("problem 1");
+    }
+    public void problemTwo(){
+        System.out.println("problem 2");
+    }
 }

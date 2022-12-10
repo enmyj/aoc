@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef988c81-dc41-4a1f-aedd-2194a3071af9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCAbstract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/DayTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/input_data/daytwo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/DayOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/DayOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/enmyj/aoc/DayOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/enmyj/aoc/DayOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCAbstract.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +95,22 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.DayOne">
+  <component name="RunManager" selected="Application.DayTwo">
     <configuration name="DayOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="enmyj.aoc.DayOne" />
+      <module name="enmyj-aoc-2022.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="enmyj.aoc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DayTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="enmyj.aoc.DayTwo" />
       <module name="enmyj-aoc-2022.app.main" />
       <extension name="coverage">
         <pattern>
@@ -146,29 +157,6 @@
             <option value=":app:test" />
             <option value="--tests" />
             <option value="&quot;enmyj.aoc.DayOneTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="DayOneTest.dayOneCanAdd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;enmyj.aoc.DayOneTest.dayOneCanAdd&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -226,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DayTwo" />
         <item itemvalue="Application.DayOne" />
         <item itemvalue="Gradle.DayOneTest" />
         <item itemvalue="Gradle.DayOneTest.parseInputStatic" />
         <item itemvalue="Gradle.DayOneTest.parseInputDynamic" />
-        <item itemvalue="Gradle.DayOneTest.dayOneCanAdd" />
       </list>
     </recent_temporary>
   </component>
