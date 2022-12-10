@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 class DayOneTest {
     @Example
     void parseInputStatic() {
-        DayOne classUnderTest = new DayOne();
+        DayOne classUnderTest = new DayOne("somepath");
         classUnderTest.allLines = Arrays.asList("1", "2", "3", "", "1", "2");
         classUnderTest.parseInput();
         assertThat(Arrays.asList(6L, 3L), equalTo(classUnderTest.caloriesPerElf));
@@ -22,7 +22,7 @@ class DayOneTest {
 
     @Property
     void parseInputDynamic(@ForAll List<@NumericChars @StringLength(min=0, max=10) String> inputLines) {
-        DayOne classUnderTest = new DayOne();
+        DayOne classUnderTest = new DayOne("somepath");
         classUnderTest.allLines = inputLines;
         classUnderTest.parseInput();
         assertThat(classUnderTest.caloriesPerElf.size(), lessThanOrEqualTo(inputLines.size()));

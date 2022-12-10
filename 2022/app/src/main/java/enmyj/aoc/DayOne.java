@@ -1,39 +1,13 @@
 package enmyj.aoc;
 
-import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DayOne {
-    String filePath = "input_data/dayone.txt";
-    List<String> allLines = new ArrayList<>();
+public class DayOne extends AOCAbstract{
     List<Long> caloriesPerElf = new ArrayList<>();
 
-
-    public void readInput() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream(filePath);
-
-        if (inputStream == null) {
-            throw new IllegalArgumentException("file not found! " + filePath);
-        }
-
-        try (InputStreamReader streamReader =
-                     new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-             BufferedReader reader = new BufferedReader(streamReader)) {
-
-            String line;
-            while ((line = reader.readLine()) != null) {
-                allLines.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public DayOne(String filePath) {
+        this.filePath = filePath;
     }
 
     public void parseInput() {
@@ -51,22 +25,24 @@ public class DayOne {
         }
     }
 
-    public Long calculatePartOne() {
-        return Collections.max(caloriesPerElf);
+    @Override
+    public void problemOne() {
+        System.out.println(Collections.max(caloriesPerElf));
     }
 
-    public Long calculatePartTwo() {
+    @Override
+    public void problemTwo() {
         List<Long> sorted = caloriesPerElf.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         List<Long> topThree = sorted.subList(0, 3);
-        return (long) topThree.stream().mapToInt(Long::intValue).sum();
+        System.out.println( (long) topThree.stream().mapToInt(Long::intValue).sum());
     }
 
 
     public static void main(String[] args) {
-        DayOne d = new DayOne();
-        d.readInput();
+        DayOne d = new DayOne("input_data/dayone.txt");
+        d.readFile();
         d.parseInput();
-        System.out.println(d.calculatePartOne());
-        System.out.println(d.calculatePartTwo());
+        d.problemOne();
+        d.problemTwo();
     }
 }

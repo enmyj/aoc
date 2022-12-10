@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef988c81-dc41-4a1f-aedd-2194a3071af9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/out/production/resources/input_data/dayone.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/out/test/resources/junit-platform.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCAbstract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/AOCInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.jqwik-database" beforeDir="false" afterPath="$PROJECT_DIR$/app/.jqwik-database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/App.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/DayOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/enmyj/aoc/DayOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/enmyj/aoc/AppTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/enmyj/aoc/DayOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/enmyj/aoc/DayOneTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +61,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -91,10 +94,10 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.DayOneTest">
+  <component name="RunManager" selected="Application.DayOne">
     <configuration name="DayOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="enmyj.aoc.DayOne" />
       <module name="enmyj-aoc-2022.app.main" />
@@ -223,10 +226,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DayOne" />
         <item itemvalue="Gradle.DayOneTest" />
         <item itemvalue="Gradle.DayOneTest.parseInputStatic" />
         <item itemvalue="Gradle.DayOneTest.parseInputDynamic" />
-        <item itemvalue="Application.DayOne" />
         <item itemvalue="Gradle.DayOneTest.dayOneCanAdd" />
       </list>
     </recent_temporary>
@@ -265,5 +268,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
