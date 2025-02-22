@@ -45,11 +45,36 @@ def num_xmases(search):
     return tot
 
 
-def part_two():
-    pass
+def part_two(filename):
+    grid = [line.strip() for line in read_file(filename)]
+
+    width = len(grid[0])
+    height = len(grid)
+
+    def is_xmas(x, y):
+        if x + 2 > width:
+            return False
+        if y + 2 > height:
+            return False
+
+        top_left = grid[y][x]
+        top_right = grid[y][x + 2]
+        middle = grid[y + 1][x + 1]
+        bottom_left = grid[y + 2][x]
+        bottom_right = grid[y + 2][x + 2]
+        joined = top_left + top_right + middle + bottom_left + bottom_right
+        print(joined)
+        return joined in ("MSAMS", "MMASS", "SSAMM", "SMASM")
+
+    total = 0
+    for y in range(height - 2):
+        for x in range(width - 2):
+            total += int(is_xmas(x, y))
+
+    return total
 
 
 if __name__ == "__main__":
     filename = "four.txt"
-    print(part_one(filename))
-    # print(part_two(filename))
+    # print(part_one(filename))
+    print(part_two(filename))
